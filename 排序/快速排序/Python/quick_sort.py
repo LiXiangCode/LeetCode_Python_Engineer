@@ -1,4 +1,4 @@
-from 排序.leetcode_data import nums
+from leetcode_data import nums
 import time
 import random
 

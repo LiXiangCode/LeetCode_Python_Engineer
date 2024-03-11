@@ -1,11 +1,13 @@
+import sys
+sys.path.append('/Users/zengxiaowei/STUDY/Github/LeetCode/Python_Coding')
+
 import math
-# import sys
-# sys.path.append('/Users/zengxiaowei/STUDY/Github/LeetCode/Python_Coding/排序')
 
-# from 排序.calculate_execute_time import d_calculate_execute_time
-# from 排序.leetcode_data import nums
+from calculate_execute_time import d_calculate_execute_time
+from leetcode_data import nums
 
-#@d_calculate_execute_time
+
+@d_calculate_execute_time
 def bucket_sort(nums):
     if min(nums) < 0:
         bias = -min(nums)
@@ -40,5 +42,5 @@ def insertion_sort(nums):
         
 #nums = [38, -159, -53648, 129, 128, 317, 42537]
 #nums = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 10000, 10000, 9999, 9999, 9998, 9998, 9997, 9997, 9996, 9996]
-nums = [0]
-print(bucket_sort(nums))
+#nums = [0]
+bucket_sort(nums)
