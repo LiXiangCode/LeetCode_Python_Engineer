@@ -1,3 +1,6 @@
+import sys
+import sys
+sys.path.append('/Users/zengxiaowei/STUDY/Github/LeetCode/Python_Coding')
 from leetcode_data import nums
 import time
 import random
