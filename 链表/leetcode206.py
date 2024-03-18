@@ -20,9 +20,25 @@ LeetCode206: 反转链表
 """
 
 class ListNode(object):
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+    def __init__(self, nums):
+        assert(len(nums) >= 1)
+        self.val = nums[0]
+        self.next = None
+
+        node = self
+        for num in nums[1:]:
+            node.next = ListNode([num])
+            node = node.next  
+            
+    def print_list_node(self):
+        if self:
+            current_node = self
+            while current_node:
+                print(f"{current_node.val}->", end = "")
+                current_node = current_node.next
+        
+
+                  
      
 """
 此代码已通过leetcode测试
@@ -53,42 +69,18 @@ def reverse_list_recursion(head):
     return next_node
 
 
+
+
+
 """本地测试代码
 通过数组数据来构建链表
 并打印反转后的链表
 """
 # 构建一个链表：1 -> 2 -> 3 -> 4 -> 5
 nums = [1, 2, 3, 4, 5, 6, 7, 9]
-# node_list = []
-
-def generate_list(nums):
-    node_list = []
-    # 先生成孤立节点
-    for num in nums:
-        node_list.append(ListNode(num, None))
-    # 将孤立的链表节点连接起来
-    for i in range(len(node_list)-1):
-        node_list[i].next = node_list[i+1]
-    # 返回表头元素即可
-    return node_list[0] 
+head = ListNode(nums)
 
 
-def print_list_node(head):
-    print_list = []
-    current_node = head
-    while current_node:
-        print_list.append(current_node.val)
-        current_node = current_node.next
-    print(print_list)
-
-# for num in nums:
-#     node_list.append(ListNode(num))
-# for i in range(len(node_list) - 1):
-#     node_list[i].next = node_list[i+1]
-
-# 将链表进行反转
-newHead = reverse_list_recursion(generate_list(nums))
-print_list_node(newHead)
 
 # 打印反转后的链表：5 -> 4 -> 3 -> 2 -> 1
 # current_node = newHead
